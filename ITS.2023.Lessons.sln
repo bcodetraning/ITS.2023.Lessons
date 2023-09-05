@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classes", "Classes\Classes.csproj", "{BEFC2019-9ED9-4F53-A5F8-B3A1A92B8FD0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Associations", "Associations\Associations.csproj", "{29FB0E53-11F0-43BE-A658-64E1E0B76245}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirittiUmaniUnioneEuropea", "DirittiUmaniUnioneEuropea\DirittiUmaniUnioneEuropea.csproj", "{412E2BC9-C318-4173-BDF7-85E378ECF167}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BEFC2019-9ED9-4F53-A5F8-B3A1A92B8FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEFC2019-9ED9-4F53-A5F8-B3A1A92B8FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEFC2019-9ED9-4F53-A5F8-B3A1A92B8FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEFC2019-9ED9-4F53-A5F8-B3A1A92B8FD0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{29FB0E53-11F0-43BE-A658-64E1E0B76245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29FB0E53-11F0-43BE-A658-64E1E0B76245}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29FB0E53-11F0-43BE-A658-64E1E0B76245}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29FB0E53-11F0-43BE-A658-64E1E0B76245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412E2BC9-C318-4173-BDF7-85E378ECF167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412E2BC9-C318-4173-BDF7-85E378ECF167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412E2BC9-C318-4173-BDF7-85E378ECF167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412E2BC9-C318-4173-BDF7-85E378ECF167}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
