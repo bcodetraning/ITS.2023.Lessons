@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Associations", "Association
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirittiUmaniUnioneEuropea", "DirittiUmaniUnioneEuropea\DirittiUmaniUnioneEuropea.csproj", "{412E2BC9-C318-4173-BDF7-85E378ECF167}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classes", "Classes\Classes.csproj", "{4FF27539-AC3E-42D9-AE18-B30BFB38D32C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SongStreaming", "SongStreaming\SongStreaming.csproj", "{15FD3ED1-952D-4A99-9086-DDEA315A46A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{412E2BC9-C318-4173-BDF7-85E378ECF167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{412E2BC9-C318-4173-BDF7-85E378ECF167}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{412E2BC9-C318-4173-BDF7-85E378ECF167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FF27539-AC3E-42D9-AE18-B30BFB38D32C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF27539-AC3E-42D9-AE18-B30BFB38D32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF27539-AC3E-42D9-AE18-B30BFB38D32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF27539-AC3E-42D9-AE18-B30BFB38D32C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15FD3ED1-952D-4A99-9086-DDEA315A46A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15FD3ED1-952D-4A99-9086-DDEA315A46A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15FD3ED1-952D-4A99-9086-DDEA315A46A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15FD3ED1-952D-4A99-9086-DDEA315A46A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
