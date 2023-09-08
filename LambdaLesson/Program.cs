@@ -6,7 +6,10 @@ using System.Threading.Channels;
 namespace LambdaLesson
 {
     internal class Program
-    {
+    { 
+
+
+       
         static List<Comune> comuni = new List<Comune>()
         {
             new() { Name = "Corsico", Provincia = "Milano", Regione = "Lombardia", abitanti = 10000 },
@@ -48,7 +51,25 @@ namespace LambdaLesson
                 Console.WriteLine($"{item.Regione} | {item.abitanti}");
             }
         }
-    }
+        internal static void InlineQuery(string Provincia)
+        {
+            comuni
+                 .Where(c => c.Provincia == Provincia)
+                     .Select(i => new { i.Regione, i.Provincia })
+                     .Distinct()
+                     .OrderByDescending(i => i.Regione)
+                     .ToList()
+                     .ForEach(c =>
+                     {
+                         Console.Write(c.Provincia);
+                         Console.Write("//");
+                         Console.WriteLine(c.Regione);
+
+                     });
+
+        }
+    } 
+
     internal class Comune
     {
         public string Name;
