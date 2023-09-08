@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SongStreaming", "SongStream
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryExercise", "DictionaryExercise\DictionaryExercise.csproj", "{06E94267-F2B4-4DDC-9355-1967E776109E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaLesson", "LambdaLesson\LambdaLesson.csproj", "{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{06E94267-F2B4-4DDC-9355-1967E776109E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06E94267-F2B4-4DDC-9355-1967E776109E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06E94267-F2B4-4DDC-9355-1967E776109E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
