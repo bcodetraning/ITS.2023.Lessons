@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classes", "Classes\Classes.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SongStreaming", "SongStreaming\SongStreaming.csproj", "{15FD3ED1-952D-4A99-9086-DDEA315A46A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryExercise", "DictionaryExercise\DictionaryExercise.csproj", "{06E94267-F2B4-4DDC-9355-1967E776109E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DictionaryExercise", "DictionaryExercise\DictionaryExercise.csproj", "{06E94267-F2B4-4DDC-9355-1967E776109E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaLesson", "LambdaLesson\LambdaLesson.csproj", "{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaLesson", "LambdaLesson\LambdaLesson.csproj", "{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvLesson", "CsvLesson\CsvLesson.csproj", "{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
