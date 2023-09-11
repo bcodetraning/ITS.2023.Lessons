@@ -21,7 +21,7 @@ namespace Utility.Read
         public List<Radio> radios { get; set; }
         public List<Genre> genres { get; set; }
 
-        public Utility.Models.Account account { get; set; }
+        public Account account { get; set; }
 
         public static DataStore dataStore;
         
@@ -76,12 +76,12 @@ namespace Utility.Read
             //}
             #endregion
 
-            GetAllAlbums().GetAwaiter().GetResult();
-            GetAllArtists().GetAwaiter().GetResult();
-            GetAllSongs().GetAwaiter().GetResult();
-            GetAllGenre().GetAwaiter().GetResult();
-            GetAllPlaylists().GetAwaiter().GetResult();
-            GetAllRadios().GetAwaiter().GetResult();
+            //GetAllAlbums().GetAwaiter().GetResult();
+            //GetAllArtists().GetAwaiter().GetResult();
+            //GetAllSongs().GetAwaiter().GetResult();
+            //GetAllGenre().GetAwaiter().GetResult();
+            //GetAllPlaylists().GetAwaiter().GetResult();
+            //GetAllRadios().GetAwaiter().GetResult();
             //GetAccount().GetAwaiter().GetResult();
 
 
@@ -95,55 +95,55 @@ namespace Utility.Read
             SetRadiosGenre();
         }
         #region GetFromDB
-        async Task GetAllSongs()
-        {
-            HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetSongs");
+        ////async Task GetAllSongs()
+        ////{
+        ////    HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetSongs");
 
-            if (response.IsSuccessStatusCode)
-                songs = await response.Content.ReadAsAsync<List<Song>>();
-        }
-        async Task GetAllArtists()
-        {
-            HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetArtists");
+        ////    if (response.IsSuccessStatusCode)
+        ////        songs = await response.Content.ReadAsAsync<List<Song>>();
+        ////}
+        ////async Task GetAllArtists()
+        ////{
+        ////    HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetArtists");
 
-            if (response.IsSuccessStatusCode)
-                artists = await response.Content.ReadAsAsync<List<Artist>>();
-        }
-        async Task GetAllAlbums()
-        {
-            HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetAlbums");
+        ////    if (response.IsSuccessStatusCode)
+        ////        artists = await response.Content.ReadAsAsync<List<Artist>>();
+        ////}
+        ////async Task GetAllAlbums()
+        ////{
+        ////    HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetAlbums");
 
-            if (response.IsSuccessStatusCode)
-                albums = await response.Content.ReadAsAsync<List<Album>>();
-        }
-        async Task GetAllPlaylists()
-        {
-            HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetPlaylists");
+        ////    if (response.IsSuccessStatusCode)
+        ////        albums = await response.Content.ReadAsAsync<List<Album>>();
+        ////}
+        ////async Task GetAllPlaylists()
+        ////{
+        ////    HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetPlaylists");
 
-            if (response.IsSuccessStatusCode)
-                playlists = await response.Content.ReadAsAsync<List<Playlist>>();
-        }
-        async Task GetAllRadios()
-        {
-            HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetRadios");
+        ////    if (response.IsSuccessStatusCode)
+        ////        playlists = await response.Content.ReadAsAsync<List<Playlist>>();
+        ////}
+        ////async Task GetAllRadios()
+        ////{
+        ////    HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetRadios");
 
-            if (response.IsSuccessStatusCode)
-                radios = await response.Content.ReadAsAsync<List<Radio>>();
-        }
-        async Task GetAccount()
-        {
-            HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetAccount");
+        ////    if (response.IsSuccessStatusCode)
+        ////        radios = await response.Content.ReadAsAsync<List<Radio>>();
+        ////}
+        ////async Task GetAccount()
+        ////{
+        ////    HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetAccount");
 
-            if (response.IsSuccessStatusCode)
-                account = await response.Content.ReadAsAsync<Account>();
-        }
-        async Task GetAllGenre()
-        {
-            HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetGenres");
+        ////    if (response.IsSuccessStatusCode)
+        ////        account = await response.Content.ReadAsAsync<Account>();
+        ////}
+        ////async Task GetAllGenre()
+        ////{
+        ////    HttpResponseMessage response = await client.GetAsync($"api/DBSpotify/GetGenres");
 
-            if (response.IsSuccessStatusCode)
-                genres = await response.Content.ReadAsAsync<List<Genre>>();
-        }
+        ////    if (response.IsSuccessStatusCode)
+        ////        genres = await response.Content.ReadAsAsync<List<Genre>>();
+        ////}
         #endregion
 
         #region SetLocal

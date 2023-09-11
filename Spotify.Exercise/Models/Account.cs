@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
+
 
 namespace Utility.Models
 {
-    public partial class Account
+    public class Account
     {
         public Account()
         {
