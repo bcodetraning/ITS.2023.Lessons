@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DictionaryExercise", "Dicti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdaLesson", "LambdaLesson\LambdaLesson.csproj", "{EF4EDE9D-AB31-416D-89D6-FF3504F63BB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvLesson", "CsvLesson\CsvLesson.csproj", "{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsvLesson", "CsvLesson\CsvLesson.csproj", "{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify.Exercise", "Spotify.Exercise\Spotify.Exercise.csproj", "{72606A03-B1FD-47A5-96F8-74805F3474AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED349AE0-ECD9-4932-B4DE-EBBDD3E5FE36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72606A03-B1FD-47A5-96F8-74805F3474AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72606A03-B1FD-47A5-96F8-74805F3474AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72606A03-B1FD-47A5-96F8-74805F3474AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72606A03-B1FD-47A5-96F8-74805F3474AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
