@@ -5,9 +5,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using Utility.Models;
+using Spotify.Exercise;
 
-namespace Utility.Read
+namespace Spotify.Exercise
 {
     public class DataStore
     {

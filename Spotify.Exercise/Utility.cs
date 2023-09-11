@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Utility.Models;
 
-namespace Utility.Read
+
+namespace Spotify.Exercise
 {   
     public static class Utility 
     {

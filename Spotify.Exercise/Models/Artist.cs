@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace Utility.Models
+namespace Spotify.Exercise
 {
     public partial class Artist
     {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using Utility.Models;
 
-namespace Utility.Read
+
+namespace Spotify.Exercise
 {
     public static class UserInterface
     {

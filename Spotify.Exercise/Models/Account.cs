@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 
 
-namespace Utility.Models
+namespace Spotify.Exercise
 {
     public class Account
     {
