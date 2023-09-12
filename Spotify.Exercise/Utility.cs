@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 
@@ -22,42 +23,41 @@ namespace Spotify.Exercise
         {
             List<T> list = new List<T>();
             string[] headers = lines.ElementAt(0).Split(',');
-            lines.RemoveAt(0);
+            lines.RemoveAt(0); // Rimuovo la prima riga (nome colonne) del mio datasource
             bool corretto = false;
             bool p = true;
-            T entry = new T();
-            var prop = entry.GetType().GetProperties();
+            T entry = new T(); // Creo istanza per poter estrarre le properties
+            PropertyInfo[] prop = entry
+                            .GetType() // Prendo il tipo
+                                    .GetProperties(); // Prendo le sue properties 
 
             if (true)
             {
-                for (int i = 0; i < prop.Length; i++)
-                {
-                   
-                    if (prop.ElementAt(i).Name == headers[i])
-                    {
-                        
-                        corretto = true;
+                for (int i = 0; i < prop.Length; i++) // Ciclo le properties dell'oggetto  T
+                {                   
+                    if (prop.ElementAt(i).Name == headers[i]) // ciclo le colonne e le properties insieme
+                    {                        
+                        corretto = true;      
                     }
-                    else p = false;
-
+                    else p = false; // S eha fallito almeno una volta, setto a false
                 }
             }
-
             if (corretto && p)
             {
                 foreach (var line in lines)
                 {
                     int j = 0;
-                    string[] colons = line.Split(',');
-                    entry = new T();
-                    foreach (var col in colons)
+                    string[] columns = line.Split(',');
+                    entry = new T(); // Per ogni riga del CSV creo un nuovo oggetto di tipo T
+                    foreach (var col in columns) // cicle le colonne del CSV
                     {
                         entry.GetType()
                             .GetProperty(headers[j])
-                            .SetValue(entry, Convert.ChangeType(
-                                col, entry.GetType()
-                                .GetProperty(headers[j]) // Prende la property in base al nome 
-                                .PropertyType)//ritorna il tipo 
+                            .SetValue(entry, //  il nuovo oggetto T che ho creato
+                            Convert
+                            .ChangeType(col, //   singola cella del CSV (il valore da settare )
+                            entry.GetType().GetProperty(headers[j]) // Prende la property col nome del Header corrente 
+                                .PropertyType)//ritorna il tipo del property 
                             ); 
 
                         j++;
@@ -208,7 +208,7 @@ namespace Spotify.Exercise
                       Songs = group.Select(i => i).ToList(),
                       Artist = group.Select(i => i.Artist).Distinct().FirstOrDefault(),
                       Genre = group.Select(i => i.Genre).Distinct().FirstOrDefault(),
-                  }).ToList();            
+                  }).ToList();             
 
         }
         public static List<Artist> GetArtistByAlbums(List<Album> Albums)
@@ -218,7 +218,7 @@ namespace Spotify.Exercise
                 {
                     Name = group.Key,
                     Albums = group.Select(i => i).ToList(),
-                    Songs = group.SelectMany(i => i.Songs).ToList() 
+                    Songs =  group.SelectMany(i => i.Songs).ToList() 
 
                 }).ToList();
         }

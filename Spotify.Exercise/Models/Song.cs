@@ -20,10 +20,14 @@ namespace Spotify.Exercise
         public Genre Genres;
 
        
-        public void AddAlbumToSong(List<Album> Albums)
+        public void SetAlbumToSong(List<Album> Albums)
         {
             this.Albums = Albums.Where(s=> s.Songs.Contains(this)).FirstOrDefault();  
         }
-       
+        public void SetArtistToSong(List<Artist> Artists)
+        {
+            this.Artists = Artists.Where(s => s.Songs.Contains(this)).FirstOrDefault();
+        }
+
     }
 }

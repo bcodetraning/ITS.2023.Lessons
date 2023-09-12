@@ -55,10 +55,14 @@ namespace Spotify.Exercise
 
             foreach (Song s in songs)
             {
-               s.AddAlbumToSong(albums);               
+               s.SetAlbumToSong(albums);               
+            }
+            foreach (Song s in songs)
+            {
+                s.SetArtistToSong(artists);
             }
             
-          
+
             //foreach (Song s in songs)
             //{
             //    s.CreateGenres(genres);
@@ -90,9 +94,9 @@ namespace Spotify.Exercise
 
             //SetSongProperties();
             //SetGenreProperties();
-            //SetAlbumProperties();
-            //SetArtistAlbum();
-            //SetArtistSongs();
+            // SetAlbumProperties();
+            SetArtistAlbum();
+            SetArtistSongs();
             ////SetPlaylistAccount();
             ////SetAccountPlaylists();
             //SetRadiosGenre();
@@ -149,21 +153,21 @@ namespace Spotify.Exercise
         ////}
         #endregion
 
-       
-        //void SetArtistAlbum()
-        //{
-        //    foreach(var artist in artists)
-        //    {
-        //        artist.Albums.AddRange(albums.Where(x => x.Artist == artist.Title));
-        //    }
-        //}
-        //void SetArtistSongs()
-        //{
-        //    foreach (var artist in artists)
-        //    {
-        //        artist.Songs.AddRange(songs.Where(x => x.Artist == artist.Title));
-        //    }
-        //}
+
+        void SetArtistAlbum()
+        {
+            foreach (var artist in artists)
+            {
+                artist.Albums.AddRange(albums.Where(x => x.Artist == artist.Name));
+            }
+        }
+        void SetArtistSongs()
+        {
+            foreach (var artist in artists)
+            {
+                artist.Songs.AddRange(songs.Where(x => x.Artist == artist.Name));
+            }
+        }
         //void SetAlbumProperties()
         //{
         //    foreach (var album in albums)
