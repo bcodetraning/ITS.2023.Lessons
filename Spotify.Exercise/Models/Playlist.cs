@@ -9,9 +9,6 @@ namespace Spotify.Exercise
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public int? AccountId { get; set; }
-        public DateTime? CreatedAt { get; set; }
-
-        public virtual Account Account { get; set; }
+       
     }
 }

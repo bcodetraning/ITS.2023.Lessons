@@ -12,7 +12,7 @@ namespace Spotify.Exercise
 {   
     public static class Utility 
     {
-
+       
         public static List<string> ReadfromFile(string path) 
         {
             var lines = File.ReadAllLines(path).ToList();
@@ -28,13 +28,14 @@ namespace Spotify.Exercise
             T entry = new T();
             var prop = entry.GetType().GetProperties();
 
-            if (prop.Length == headers.Length)
+            if (true)
             {
                 for (int i = 0; i < prop.Length; i++)
                 {
-
+                   
                     if (prop.ElementAt(i).Name == headers[i])
                     {
+                        
                         corretto = true;
                     }
                     else p = false;
@@ -51,7 +52,14 @@ namespace Spotify.Exercise
                     entry = new T();
                     foreach (var col in colons)
                     {
-                        entry.GetType().GetProperty(headers[j]).SetValue(entry, Convert.ChangeType(col, entry.GetType().GetProperty(headers[j]).PropertyType));
+                        entry.GetType()
+                            .GetProperty(headers[j])
+                            .SetValue(entry, Convert.ChangeType(
+                                col, entry.GetType()
+                                .GetProperty(headers[j]) // Prende la property in base al nome 
+                                .PropertyType)//ritorna il tipo 
+                            ); 
+
                         j++;
                     }
                     list.Add(entry);
@@ -110,7 +118,7 @@ namespace Spotify.Exercise
             foreach (Artist artist in db.artists)
             {
                 int totalPopularity = 0;
-                foreach (var song in db.songs.Where(song => song.Artist.Title.Equals(artist.Title)))
+                foreach (var song in db.songs.Where(song => song.Artists.Name.Equals(artist.Name)))
                 {
                     totalPopularity += song.Popularity;
                 }
@@ -118,11 +126,10 @@ namespace Spotify.Exercise
             }
             foreach (var art in sortedArtists.OrderBy(x => x.Value).Reverse().Take(5))
             {
-                artistList.Add(db.artists.Where(i => i.Title == art.Key.Title).FirstOrDefault());
+                artistList.Add(db.artists.Where(i => i.Name == art.Key.Name).FirstOrDefault());
             }
             return artistList;
         }
-
         public static List<Song> GetTopFiveSongs()
         {
 
@@ -137,12 +144,6 @@ namespace Spotify.Exercise
             }
             return output.OrderBy(x => x.Popularity).Reverse().Take(5).ToList();
         }
-
-
-
-
-
-
         public static Song FindSong(string input)
         {
             foreach (var song in DataStore.GetInstance().songs)
@@ -158,7 +159,7 @@ namespace Spotify.Exercise
         {
             foreach (var artist in DataStore.GetInstance().artists)
             {
-                if (artist.Title.Equals(input))
+                if (artist.Name.Equals(input))
                 {
                     return artist;
                 }
@@ -197,6 +198,29 @@ namespace Spotify.Exercise
                 }
             }
             return null;
+        }
+        public static List<Album> GetAlbumsBySong(List<Song> Songs)
+        {
+             return Songs.GroupBy(s => s.Album)
+                  .Select(group => new Album
+                  {
+                      Title = group.Key,
+                      Songs = group.Select(i => i).ToList(),
+                      Artist = group.Select(i => i.Artist).Distinct().FirstOrDefault(),
+                      Genre = group.Select(i => i.Genre).Distinct().FirstOrDefault(),
+                  }).ToList();            
+
+        }
+        public static List<Artist> GetArtistByAlbums(List<Album> Albums)
+        {
+            return Albums.GroupBy(s => s.Artist)
+                .Select(group => new Artist
+                {
+                    Name = group.Key,
+                    Albums = group.Select(i => i).ToList(),
+                    Songs = group.SelectMany(i => i.Songs).ToList() 
+
+                }).ToList();
         }
 
     }

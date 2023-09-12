@@ -13,5 +13,5 @@ namespace Spotify.Client
             Console.ReadLine();
         }
     }
-    
-}
+    }
+

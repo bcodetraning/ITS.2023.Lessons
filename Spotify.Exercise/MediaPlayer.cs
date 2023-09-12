@@ -45,9 +45,9 @@ namespace Spotify.Exercise
             
             if(currentRadio == null)
             {
-                currentRadio = DataStore.GetInstance().radios.Where(x => x.Genre.Title == currentSong.Genre.Title).FirstOrDefault();
+                currentRadio = DataStore.GetInstance().radios.Where(x => x.Genre.Title == currentSong.Genre).FirstOrDefault();
             }
-            List<Song> songs = DataStore.GetInstance().songs.Where(x=>x.Genre.Title == currentRadio.Genre.Title).ToList();
+            List<Song> songs = DataStore.GetInstance().songs.Where(x=>x.Genre == currentRadio.Genre.Title).ToList();
             var index = random.Next(0, songs.Count);
             while (songs[index] == currentSong)
             {

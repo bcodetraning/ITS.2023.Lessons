@@ -374,7 +374,7 @@ namespace Spotify.Exercise
             var artists = Utility.GetTopFiveArtists();
             for (int i = 0; i < artists.Count(); i++)
             {
-                Console.WriteLine($"{i + 1}. {artists[i].Title}");
+                Console.WriteLine($"{i + 1}. {artists[i].Name}");
             }
             SongPlayer();
             input = Console.ReadLine();
@@ -383,7 +383,7 @@ namespace Spotify.Exercise
                 if (int.Parse(input) >= 1 && int.Parse(input) <= artists.Count())
                 {
 
-                    MediaPlayer.GetInstance().currentArtist = Utility.FindArtist(artists[int.Parse(input) - 1].Title);
+                    MediaPlayer.GetInstance().currentArtist = Utility.FindArtist(artists[int.Parse(input) - 1].Name);
 
                     return "artistMenu";
                 }
@@ -461,7 +461,7 @@ namespace Spotify.Exercise
                 var artistsToPrint = GetPage(artists, pageNumber, pagination);
                 for (int j = 0; j < artistsToPrint.Count; j++)
                 {
-                    Console.WriteLine($"{j + 1}. {artistsToPrint[j].Title}");
+                    Console.WriteLine($"{j + 1}. {artistsToPrint[j].Name}");
                 }
                 Console.WriteLine("\n0. Next page");
                 Console.WriteLine("H. Torna alla homepage");
@@ -484,7 +484,7 @@ namespace Spotify.Exercise
                     else if (int.Parse(input) >= 1 && int.Parse(input) <= artistsToPrint.Count)
                     {
 
-                        MediaPlayer.GetInstance().currentArtist = Utility.FindArtist(artistsToPrint[int.Parse(input) - 1].Title);
+                        MediaPlayer.GetInstance().currentArtist = Utility.FindArtist(artistsToPrint[int.Parse(input) - 1].Name);
                         MediaPlayer.GetInstance().currentPages.Clear();
                         MediaPlayer.GetInstance().currentPages.Add("m");
                         MediaPlayer.GetInstance().currentPages.Add("a");
@@ -652,7 +652,7 @@ namespace Spotify.Exercise
             {
                 Artist artist = MediaPlayer.GetInstance().currentArtist;
                 LocaleNavbar();
-                Console.WriteLine($"\n{artist.Title}\n");
+                Console.WriteLine($"\n{artist.Name}\n");
                 var topSongs = Utility.GetTopFiveSongs();
                 int j = 1;
                 Console.WriteLine("Le canzoni più ascoltate");
@@ -813,7 +813,7 @@ namespace Spotify.Exercise
             {
 
                 LocaleNavbar();
-                Console.WriteLine($"Discografia di {MediaPlayer.GetInstance().currentArtist.Title}:\n");
+                Console.WriteLine($"Discografia di {MediaPlayer.GetInstance().currentArtist.Name}:\n");
                 var songsToPrint = GetPage(albums, pageNumber, pagination);
                 for (int j = 0; j < songsToPrint.Count; j++)
                 {
@@ -947,10 +947,10 @@ namespace Spotify.Exercise
                 input = Console.ReadLine().ToLower();
                 foreach (var artist in DataStore.dataStore.artists)
                 {
-                    if (artist.Title.ToLower() == input)
+                    if (artist.Name.ToLower() == input)
                     {
                         artists.Add(artist);
-                        Console.WriteLine(artist.Title);
+                        Console.WriteLine(artist.Name);
                     }
                 }
                 if (artists.Count != 0)
@@ -1096,12 +1096,12 @@ namespace Spotify.Exercise
                 if (MediaPlayer.GetInstance().isPlaying)
                 {
                     Console.BackgroundColor = ConsoleColor.DarkRed;
-                    Console.WriteLine($"In riproduzione: {MediaPlayer.GetInstance().currentSong.Title} di {MediaPlayer.GetInstance().currentSong.Artist.Title}");
+                    Console.WriteLine($"In riproduzione: {MediaPlayer.GetInstance().currentSong.Title} di {MediaPlayer.GetInstance().currentSong.Artists.Name}");
                 }
                 else
                 {
                     Console.BackgroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine($"In pausa: {MediaPlayer.GetInstance().currentSong.Title} di {MediaPlayer.GetInstance().currentSong.Artist.Title}");
+                    Console.WriteLine($"In pausa: {MediaPlayer.GetInstance().currentSong.Title} di {MediaPlayer.GetInstance().currentSong.Artists.Name}");
                 }
             }
             Console.ResetColor();

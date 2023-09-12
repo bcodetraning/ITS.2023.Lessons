@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 #nullable disable
 
@@ -8,15 +9,21 @@ namespace Spotify.Exercise
     public partial class Song
     {
         public int Id { get; set; }
+        public int Popularity { get; set; }        
         public string Title { get; set; }
-        public int Popularity { get; set; }
-        public int? ArtistId { get; set; }
-        public int? AlbumId { get; set; }
-        public int? GenreId { get; set; }
-        public DateTime? CreatedAt { get; set; }
+        public string Album { get; set; }
+        public string Artist { get; set; }
+        public string Genre { get; set; }
 
-        public virtual Album Album { get; set; }
-        public virtual Artist Artist { get; set; }
-        public virtual Genre Genre { get; set; }
+        public Album Albums;
+        public Artist Artists;
+        public Genre Genres;
+
+       
+        public void AddAlbumToSong(List<Album> Albums)
+        {
+            this.Albums = Albums.Where(s=> s.Songs.Contains(this)).FirstOrDefault();  
+        }
+       
     }
 }
